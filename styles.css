@@ -1,0 +1,449 @@
+/* ===========================================
+   POWERFUL INTENTION - Coming Soon
+   Elegant, Minimal Design with GSAP Animations
+   =========================================== */
+
+/* Fonts */
+@font-face {
+    font-family: 'The Seasons';
+    src: url('assets/fonts/the-seasons-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotu';
+    src: url('assets/fonts/Gotu-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('assets/fonts/Karla-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* CSS Variables */
+:root {
+    /* Brand Colors */
+    --mauve: #82574d;
+    --heather: #ad8682;
+    --primrose: #e5d1cf;
+    --dust: #efeae8;
+    --mushroom: #e2d9cc;
+    --charcoal: #595354;
+
+    /* Extended */
+    --cream: #f8f6f4;
+    --warm-white: #fdfcfb;
+    --soft-gold: #c4a574;
+
+    /* Typography */
+    --font-display: 'The Seasons', 'Times New Roman', serif;
+    --font-body: 'Karla', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--cream);
+    color: var(--charcoal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Container */
+.page-container {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Background Gradient */
+.bg-gradient {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 20% 20%, rgba(229, 209, 207, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(226, 217, 204, 0.5) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(173, 134, 130, 0.1) 0%, transparent 70%),
+        linear-gradient(180deg, var(--cream) 0%, var(--dust) 100%);
+    z-index: 0;
+}
+
+/* Particles Canvas */
+#particles-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Main Content */
+.main-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4vh 1.5rem 3vh;
+    text-align: center;
+    gap: 1.5vh;
+    min-height: 0;
+}
+
+/* Logo Icon */
+.logo-icon {
+    opacity: 0;
+}
+
+.logo-icon img {
+    height: 14vh;
+    max-height: 115px;
+    min-height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Brand Name */
+.brand-name {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.brand-name .word {
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Tagline */
+.tagline {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.3em;
+    font-size: clamp(1rem, 2.4vw, 1.4rem);
+    letter-spacing: 0.02em;
+    color: var(--mauve);
+    opacity: 0;
+}
+
+.tagline-word {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 500;
+    text-transform: none;
+}
+
+.tagline-word.script {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.05em;
+    font-size: 1.1em;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 180px;
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.divider .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--heather), transparent);
+}
+
+.divider .diamond {
+    width: 6px;
+    height: 6px;
+    background-color: var(--mauve);
+    transform: rotate(45deg);
+}
+
+/* Coming Soon */
+.coming-soon {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    color: var(--mauve);
+    opacity: 0;
+}
+
+/* Description */
+.description {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    font-weight: 400;
+    color: var(--charcoal);
+    opacity: 0.7;
+    max-width: 300px;
+    line-height: 1.6;
+    opacity: 0;
+}
+
+/* Email Form */
+.email-form {
+    width: 100%;
+    max-width: 360px;
+    opacity: 0;
+}
+
+.input-group {
+    display: flex;
+    background: var(--warm-white);
+    border: 1px solid var(--primrose);
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.input-group:focus-within {
+    border-color: var(--mauve);
+    box-shadow: 0 0 0 3px rgba(130, 87, 77, 0.1);
+}
+
+.email-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.9rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.email-form input::placeholder {
+    color: var(--heather);
+    opacity: 0.7;
+}
+
+.email-form button {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.9rem 1.5rem;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--warm-white);
+    background: var(--mauve);
+    border: none;
+    border-radius: 50px;
+    margin: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.email-form button:hover {
+    background: var(--charcoal);
+    transform: scale(1.02);
+}
+
+.email-form button svg {
+    transition: transform 0.3s ease;
+}
+
+.email-form button:hover svg {
+    transform: translateX(3px);
+}
+
+/* Form Hint */
+.form-hint {
+    margin-top: 0.75rem;
+    font-size: 0.7rem;
+    color: var(--heather);
+    letter-spacing: 0.03em;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    z-index: 2;
+    padding: 1.5vh 1rem;
+    text-align: center;
+    opacity: 0;
+}
+
+.footer p {
+    font-size: 0.65rem;
+    color: var(--heather);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
+
+/* Small height screens */
+@media (max-height: 600px) {
+    .main-content {
+        gap: 1.5vh;
+        padding: 2vh 1rem 1vh;
+    }
+
+    .logo-icon img {
+        height: 12vh;
+        min-height: 58px;
+    }
+
+    .brand-name {
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
+    }
+
+    .divider {
+        max-width: 120px;
+    }
+
+    .description {
+        display: none;
+    }
+
+    .email-form input,
+    .email-form button {
+        padding: 0.7rem 1rem;
+    }
+}
+
+/* Medium screens */
+@media (min-height: 700px) {
+    .main-content {
+        gap: 2.5vh;
+    }
+
+    .logo-icon img {
+        height: 16vh;
+        max-height: 138px;
+    }
+
+    .divider {
+        max-width: 200px;
+    }
+}
+
+/* Large screens */
+@media (min-height: 800px) and (min-width: 768px) {
+    .main-content {
+        gap: 3vh;
+    }
+
+    .logo-icon img {
+        max-height: 161px;
+    }
+
+    .brand-name {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+    }
+
+    .email-form {
+        max-width: 400px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .email-form button span {
+        display: inline;
+    }
+}
+
+/* Very small screens - stack form */
+@media (max-width: 400px) {
+    .input-group {
+        flex-direction: column;
+        border-radius: 12px;
+    }
+
+    .email-form input {
+        text-align: center;
+        border-bottom: 1px solid var(--primrose);
+    }
+
+    .email-form button {
+        margin: 0;
+        border-radius: 0 0 11px 11px;
+        justify-content: center;
+    }
+}
+
+/* ===========================================
+   Accessibility
+   =========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .brand-name .word,
+    .logo-icon,
+    .tagline,
+    .divider,
+    .coming-soon,
+    .description,
+    .email-form,
+    .footer {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--mauve);
+    outline-offset: 2px;
+}
+
+::selection {
+    background: var(--primrose);
+    color: var(--mauve);
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Powerful Intention - Sacred Made Simple. Something beautiful is coming soon.">
+    <title>Powerful Intention | Sacred Made Simple</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Animated Background -->
+        <div class="bg-gradient"></div>
+        <canvas id="particles-canvas"></canvas>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Logo Icon -->
+            <div class="logo-icon" data-animate="fade-down">
+                <img src="assets/images/logo-ring.png" alt="Powerful Intention">
+            </div>
+
+            <!-- Brand Name -->
+            <h1 class="brand-name" data-animate="split-text">
+                <span class="word">POWERFUL</span>
+                <span class="word">INTENTION</span>
+            </h1>
+
+            <!-- Tagline -->
+            <p class="tagline" data-animate="fade-up">
+                <span class="tagline-word">Sacred</span>
+                <span class="tagline-word script">Made</span>
+                <span class="tagline-word">Simple</span>
+            </p>
+
+            <!-- Divider -->
+            <div class="divider" data-animate="scale-in">
+                <span class="line"></span>
+                <span class="diamond"></span>
+                <span class="line"></span>
+            </div>
+
+            <!-- Coming Soon -->
+            <h2 class="coming-soon" data-animate="fade-up">Coming Soon</h2>
+
+            <!-- Description -->
+            <p class="description" data-animate="fade-up">
+                Something sacred is being crafted for you.
+            </p>
+
+            <!-- Email Form -->
+            <form class="email-form" data-animate="fade-up" action="/api/subscribe" method="POST">
+
+                <div class="input-group">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                        autocomplete="email"
+                    >
+                    <button type="submit">
+                        <span>Notify Me</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+                <p class="form-hint">Be the first to know.</p>
+            </form>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" data-animate="fade-up">
+            <p>&copy; 2026 Powerful Intention</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

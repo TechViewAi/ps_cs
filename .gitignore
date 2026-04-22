@@ -1,0 +1,12 @@
+# Environment variables
+.env.local
+.env
+
+# Dependencies
+node_modules
+
+# Vercel
+.vercel
+
+# OS files
+.DS_Store
