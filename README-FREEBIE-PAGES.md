@@ -50,15 +50,18 @@ ps_cs/
 
 ## 🎨 Design System
 
-**Fonts:**
-- Display/Headings: "The Seasons" (serif)
-- Subheadings: "Gotu" (serif)
-- Body: "Karla" (sans-serif)
+**Fonts (Per Brand Guide):**
+- Large Headers (H1, H2): Gotu Regular (uppercase, letter-spacing: 0.1em)
+- Subheaders (H3-H5): Karla Bold (uppercase, letter-spacing: 0.17em)
+- Body Text: Karla Regular (letter-spacing: 0.02em)
+- Buttons: Karla Bold (uppercase, letter-spacing: 0.17em)
 
 **Colors:**
 - Primary Brand: `#82574d` (Mauve)
 - Secondary: `#ad8682` (Heather)
 - Light: `#e5d1cf` (Primrose)
+- Dust: `#efeae8`
+- Mushroom: `#e2d9cc`
 - Background: `#f8f6f4` (Cream)
 - Text: `#595354` (Charcoal)
 
@@ -67,6 +70,11 @@ ps_cs/
 - Section Heading: 2.5rem (desktop) / 2rem (mobile)
 - Body: 1.15rem - 1.25rem
 - Form Labels: 0.9rem uppercase
+
+**Brand Voice:**
+- Grounded, warm, reverent, accessible, soulful
+- Tagline: "Sacred Made Simple"
+- Key messaging: "Tools to return to yourself on your own terms"
 
 ---
 

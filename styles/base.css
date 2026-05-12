@@ -43,10 +43,14 @@
     --warm-white: #fdfcfb;
     --soft-gold: #c4a574;
 
-    /* Typography */
-    --font-display: 'The Seasons', 'Times New Roman', serif;
+    /* Typography - Per Brand Guide */
     --font-heading: 'Gotu', Georgia, serif;
     --font-body: 'Karla', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Letter Spacing - Per Brand Guide */
+    --spacing-heading: 0.1em;    /* 100 for Gotu */
+    --spacing-subheading: 0.17em; /* 170 for Karla Bold */
+    --spacing-body: 0.02em;       /* 20 for Karla Regular */
 
     /* Spacing */
     --section-padding: 80px 20px;

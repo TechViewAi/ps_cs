@@ -16,10 +16,11 @@
 }
 
 .landing-logo {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 0.9rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
+    letter-spacing: var(--spacing-subheading);
     color: var(--charcoal);
 }
 
@@ -46,7 +47,7 @@
     font-family: var(--font-heading);
     font-size: 3.5rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: var(--spacing-heading);
     margin-bottom: 24px;
     color: var(--charcoal);
     line-height: 1.2;
@@ -57,7 +58,8 @@
     font-size: 1.4rem;
     color: var(--heather);
     margin-bottom: 16px;
-    font-weight: 300;
+    font-weight: 400;
+    letter-spacing: var(--spacing-body);
 }
 
 .hero-tagline {
@@ -73,8 +75,9 @@
     padding: 16px 48px;
     font-family: var(--font-body);
     font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: var(--spacing-subheading);
     background-color: var(--mauve);
     color: var(--warm-white);
     border: 2px solid var(--mauve);
@@ -109,7 +112,7 @@
     font-family: var(--font-heading);
     font-size: 2.5rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--spacing-heading);
     text-align: center;
     margin-bottom: 48px;
     color: var(--charcoal);
@@ -121,6 +124,7 @@
     text-align: center;
     font-size: 1.25rem;
     line-height: 1.8;
+    letter-spacing: var(--spacing-body);
     color: rgba(89, 83, 84, 0.85);
 }
 
@@ -157,6 +161,7 @@
     font-family: var(--font-body);
     font-size: 1.15rem;
     line-height: 1.7;
+    letter-spacing: var(--spacing-body);
     color: var(--charcoal);
 }
 
@@ -218,8 +223,9 @@
 .placeholder-text {
     font-family: var(--font-body);
     font-size: 0.9rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: var(--spacing-subheading);
     color: rgba(89, 83, 84, 0.5);
 }
 
@@ -239,7 +245,7 @@
     font-family: var(--font-heading);
     font-size: 2.2rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--spacing-heading);
     margin-bottom: 16px;
     color: var(--charcoal);
 }
@@ -263,8 +269,9 @@
     display: block;
     font-family: var(--font-body);
     font-size: 0.9rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: var(--spacing-subheading);
     margin-bottom: 8px;
     color: rgba(89, 83, 84, 0.8);
 }
@@ -318,8 +325,9 @@
     padding: 18px 24px;
     font-family: var(--font-body);
     font-size: 1.1rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: var(--spacing-subheading);
     background-color: var(--mauve);
     color: var(--warm-white);
     border: 2px solid var(--mauve);
@@ -367,7 +375,7 @@
     font-family: var(--font-heading);
     font-size: 1.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--spacing-heading);
     margin-bottom: 12px;
 }
 
@@ -387,7 +395,7 @@
     font-family: var(--font-heading);
     font-size: 2rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--spacing-heading);
     text-align: center;
     margin-bottom: 48px;
     color: var(--charcoal);
@@ -432,7 +440,7 @@
     font-family: var(--font-heading);
     font-size: 1.3rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: var(--spacing-heading);
     margin-bottom: 12px;
     color: var(--charcoal);
 }
@@ -447,8 +455,9 @@
 .explore-cta {
     font-family: var(--font-body);
     font-size: 0.9rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: var(--spacing-subheading);
     color: var(--mauve);
     border-bottom: 1px solid var(--mauve);
     padding-bottom: 2px;
