@@ -1,0 +1,137 @@
+/* ===========================================
+   POWERFUL INTENTION - Base Styles
+   Shared across all landing pages
+   =========================================== */
+
+/* Fonts - Same as main site */
+@font-face {
+    font-family: 'The Seasons';
+    src: url('../assets/fonts/the-seasons-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotu';
+    src: url('../assets/fonts/Gotu-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('../assets/fonts/Karla-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* CSS Variables - Brand Colors */
+:root {
+    /* Brand Colors */
+    --mauve: #82574d;
+    --heather: #ad8682;
+    --primrose: #e5d1cf;
+    --dust: #efeae8;
+    --mushroom: #e2d9cc;
+    --charcoal: #595354;
+
+    /* Extended */
+    --cream: #f8f6f4;
+    --warm-white: #fdfcfb;
+    --soft-gold: #c4a574;
+
+    /* Typography */
+    --font-display: 'The Seasons', 'Times New Roman', serif;
+    --font-heading: 'Gotu', Georgia, serif;
+    --font-body: 'Karla', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Spacing */
+    --section-padding: 80px 20px;
+    --section-padding-mobile: 60px 16px;
+    --max-width: 1200px;
+    --content-width: 680px;
+}
+
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--mauve);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* Utilities */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-width {
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Background (optional per page) */
+.bg-gradient {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 20% 20%, rgba(229, 209, 207, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(226, 217, 204, 0.5) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(173, 134, 130, 0.1) 0%, transparent 70%),
+        linear-gradient(180deg, var(--cream) 0%, var(--dust) 100%);
+    z-index: -1;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    :root {
+        --section-padding: var(--section-padding-mobile);
+    }
+}
