@@ -1,22 +1,27 @@
 /* ===========================================
    FORM HANDLER - Email Capture
-   Simple validation and success message
+   Validates, submits, and opens success modal
    =========================================== */
 
 (function() {
     'use strict';
 
-    // Wait for DOM to load
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initForm);
+        document.addEventListener('DOMContentLoaded', init);
     } else {
-        initForm();
+        init();
     }
+
+    function init() {
+        initForm();
+        initModal();
+    }
+
+    /* ---------- Form ---------- */
 
     function initForm() {
         const form = document.getElementById('freebie-form');
         if (!form) return;
-
         form.addEventListener('submit', handleSubmit);
     }
 
@@ -56,50 +61,77 @@
             return;
         }
 
-        // Show loading state
+        // Loading state
         submitBtn.disabled = true;
+        const originalLabel = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
 
         // Simulate API call (replace with actual backend integration)
         setTimeout(function() {
-            // Hide form
-            form.style.display = 'none';
+            openModal('success-modal');
 
-            // Show success message
-            const successMsg = document.getElementById('success-message');
-            if (successMsg) {
-                successMsg.classList.add('visible');
-
-                // Update email in success message
-                const emailSpan = successMsg.querySelector('.user-email');
-                if (emailSpan) {
-                    emailSpan.textContent = email;
-                }
-
-                // Scroll to success message
-                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-
-            // Reset button (in case user navigates back)
+            // Reset form so a user who closes the modal can submit again if needed
+            form.reset();
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Me the Guide';
+            submitBtn.textContent = originalLabel;
 
-            // TODO: Replace with actual API call
-            // Example:
+            // TODO: Replace with real API call to /api/subscribe
             // fetch('/api/subscribe', {
             //     method: 'POST',
             //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ name, email, consent: true })
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     // Handle success
-            // })
-            // .catch(error => {
-            //     // Handle error
-            //     console.error('Submission error:', error);
+            //     body: JSON.stringify({
+            //         name,
+            //         email,
+            //         consent: true,
+            //         slug: form.dataset.slug || ''
+            //     })
             // });
+        }, 1200);
+    }
 
-        }, 1500);
+    /* ---------- Modal ---------- */
+
+    let lastFocused = null;
+
+    function initModal() {
+        // Close buttons + backdrop
+        document.addEventListener('click', function(e) {
+            const trigger = e.target.closest('[data-modal-close]');
+            if (trigger) {
+                const modal = trigger.closest('.modal');
+                if (modal) closeModal(modal);
+            }
+        });
+
+        // Escape key closes any open modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key !== 'Escape') return;
+            const openModalEl = document.querySelector('.modal.is-open');
+            if (openModalEl) closeModal(openModalEl);
+        });
+    }
+
+    function openModal(id) {
+        const modal = document.getElementById(id);
+        if (!modal) return;
+
+        lastFocused = document.activeElement;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+
+        // Move focus to the close button for accessibility
+        const closeBtn = modal.querySelector('.modal-close');
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal(modal) {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+
+        if (lastFocused && typeof lastFocused.focus === 'function') {
+            lastFocused.focus();
+        }
     }
 })();
