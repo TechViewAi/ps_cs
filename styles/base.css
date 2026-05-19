@@ -43,14 +43,17 @@
     --warm-white: #fdfcfb;
     --soft-gold: #c4a574;
 
-    /* Typography - Per Brand Guide */
-    --font-heading: 'Gotu', Georgia, serif;
-    --font-body: 'Karla', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Typography - Matching main site (powerfulintention.com) */
+    --font-display:   'The Seasons', 'Times New Roman', serif;            /* H1 hero */
+    --font-heading:   'The Seasons', 'Times New Roman', serif;            /* H2/H3 section headings */
+    --font-accent:    'Times New Roman', Times, serif;                    /* Italic taglines & labels */
+    --font-body:      'Karla', -apple-system, BlinkMacSystemFont, sans-serif; /* Body, labels, buttons */
 
-    /* Letter Spacing - Per Brand Guide */
-    --spacing-heading: 0.1em;    /* 100 for Gotu */
-    --spacing-subheading: 0.17em; /* 170 for Karla Bold */
-    --spacing-body: 0.02em;       /* 20 for Karla Regular */
+    /* Letter Spacing */
+    --spacing-display:    -0.02em;  /* The Seasons hero — slight negative tracking */
+    --spacing-heading:     0.05em;  /* The Seasons section headings */
+    --spacing-subheading:  0.22em;  /* Karla Bold uppercase labels */
+    --spacing-body:        0.02em;  /* Karla Regular body text */
 
     /* Spacing */
     --section-padding: 80px 20px;
