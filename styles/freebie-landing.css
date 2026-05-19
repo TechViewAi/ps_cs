@@ -52,13 +52,13 @@
 
 .hero-headline {
     font-family: var(--font-display);
-    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    font-size: clamp(2rem, 8vw, 4rem);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 24px;
-    color: var(--charcoal);
-    line-height: 1.15;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
     font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 24px;
 }
 
 .hero-subtext {
@@ -120,13 +120,14 @@
 
 .section-heading {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    text-transform: none;
-    letter-spacing: var(--spacing-display);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-weight: 400;
     text-align: center;
     margin-bottom: 48px;
     color: var(--charcoal);
-    font-weight: 400;
 }
 
 .intro-text {
@@ -270,12 +271,13 @@
 
 .form-heading {
     font-family: var(--font-display);
-    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-    text-transform: none;
-    letter-spacing: var(--spacing-display);
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-weight: 400;
     margin-bottom: 16px;
     color: var(--charcoal);
-    font-weight: 400;
 }
 
 .form-subtext {
@@ -452,12 +454,13 @@
 
 .modal-heading {
     font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    text-transform: none;
-    letter-spacing: var(--spacing-display);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-weight: 400;
     margin-bottom: 24px;
     color: var(--charcoal);
-    font-weight: 400;
 }
 
 .modal-text {
@@ -485,13 +488,14 @@
 
 .explore-heading {
     font-family: var(--font-display);
-    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-    text-transform: none;
-    letter-spacing: var(--spacing-display);
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-weight: 400;
     text-align: center;
     margin-bottom: 48px;
     color: var(--charcoal);
-    font-weight: 400;
 }
 
 .explore-grid {
