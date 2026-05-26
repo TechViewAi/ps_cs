@@ -56,7 +56,6 @@
     function initHeroEntrance() {
         if (typeof gsap === 'undefined') return;
 
-        gsap.set('.landing-header', { opacity: 0, y: -12 });
         gsap.set('.hero-logo-symbol', { opacity: 0, y: -16, scale: 0.94 });
         gsap.set('.hero-headline', { opacity: 0, y: 30 });
         gsap.set('.hero-subtext', { opacity: 0, y: 18 });
@@ -65,8 +64,7 @@
 
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-        tl.to('.landing-header', { opacity: 1, y: 0, duration: 0.7, delay: 0.1 })
-          .to('.hero-logo-symbol', { opacity: 1, y: 0, scale: 1, duration: 1.0 }, '-=0.4')
+        tl.to('.hero-logo-symbol', { opacity: 1, y: 0, scale: 1, duration: 1.0, delay: 0.15 })
           .to('.hero-headline', { opacity: 1, y: 0, duration: 1.1 }, '-=0.5')
           .to('.hero-subtext', { opacity: 1, y: 0, duration: 0.8 }, '-=0.6')
           .to('.hero-tagline', { opacity: 1, y: 0, duration: 0.7 }, '-=0.5')
