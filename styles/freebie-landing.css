@@ -45,10 +45,10 @@
 
 .hero-logo-symbol {
     display: block;
-    width: 280px;
-    max-width: 70%;
+    width: 440px;
+    max-width: 80%;
     height: auto;
-    margin: 0 auto 36px;
+    margin: 0 auto 40px;
 }
 
 .hero-headline {
@@ -594,8 +594,8 @@
     }
 
     .hero-logo-symbol {
-        width: 220px;
-        max-width: 80%;
+        width: 320px;
+        max-width: 85%;
         margin-bottom: 28px;
     }
 
