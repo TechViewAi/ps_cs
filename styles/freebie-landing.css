@@ -646,3 +646,67 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* ===========================================
+   LENIS SMOOTH SCROLL + ANIMATION SCAFFOLD
+   =========================================== */
+
+#freebie-particles {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bg-gradient {
+    z-index: 0;
+}
+
+.landing-header,
+.hero-section,
+.whats-inside-section,
+.preview-section,
+.form-section,
+.explore-more,
+.landing-footer {
+    position: relative;
+    z-index: 2;
+}
+
+/* Avoid FOUC flash before GSAP runs */
+.hero-headline,
+.hero-subtext,
+.hero-tagline,
+.hero-cta,
+.hero-logo-symbol,
+.landing-header {
+    will-change: transform, opacity;
+}
+
+.hero-logo-symbol {
+    transform-origin: 50% 50%;
+}
+
+/* Lenis required styles */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
