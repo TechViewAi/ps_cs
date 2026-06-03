@@ -31,7 +31,6 @@
         const form = event.target;
         const nameInput = form.querySelector('[name="name"]');
         const emailInput = form.querySelector('[name="email"]');
-        const consentCheckbox = form.querySelector('[name="consent"]');
         const submitBtn = form.querySelector('[type="submit"]');
 
         // Reset errors
@@ -52,12 +51,6 @@
         if (!emailRegex.test(email)) {
             emailInput.classList.add('error');
             emailInput.focus();
-            return;
-        }
-
-        // Validate consent
-        if (consentCheckbox && !consentCheckbox.checked) {
-            alert('Please agree to receive emails to continue.');
             return;
         }
 
