@@ -59,27 +59,21 @@
         const originalLabel = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
 
-        // Simulate API call (replace with actual backend integration)
-        setTimeout(function() {
+        fetch('/api/submit-freebie', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                source: form.dataset.slug || 'unknown'
+            })
+        })
+        .finally(function() {
             openModal('success-modal');
-
-            // Reset form so a user who closes the modal can submit again if needed
             form.reset();
             submitBtn.disabled = false;
             submitBtn.textContent = originalLabel;
-
-            // TODO: Replace with real API call to /api/subscribe
-            // fetch('/api/subscribe', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({
-            //         name,
-            //         email,
-            //         consent: true,
-            //         slug: form.dataset.slug || ''
-            //     })
-            // });
-        }, 1200);
+        });
     }
 
     /* ---------- Modal ---------- */
