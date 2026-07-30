@@ -68,6 +68,9 @@
                 source: form.dataset.slug || 'unknown'
             })
         })
+        .then(function(res) { return res.json().catch(function() { return {}; }); })
+        .then(function(data) { console.log('[freebie-form] submit result:', data); })
+        .catch(function(err) { console.error('[freebie-form] submit error:', err); })
         .finally(function() {
             openModal('success-modal');
             form.reset();
