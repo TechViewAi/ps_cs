@@ -16,11 +16,28 @@ export default async function handler(req, res) {
 
     if (webhookUrl) {
         try {
-            await fetch(webhookUrl, {
+            const payload = JSON.stringify({ name, email, source });
+
+            // Google Apps Script returns a 302 redirect on POST.
+            // Default fetch follows it as GET, so doPost never fires.
+            // We intercept the redirect and re-POST to the redirect URL.
+            const initial = await fetch(webhookUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, source }),
+                body: payload,
+                redirect: 'manual',
             });
+
+            if (initial.status >= 300 && initial.status < 400) {
+                const location = initial.headers.get('location');
+                if (location) {
+                    await fetch(location, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: payload,
+                    });
+                }
+            }
         } catch (err) {
             console.error('Google Sheets webhook error:', err);
         }
