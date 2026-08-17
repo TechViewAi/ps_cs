@@ -10,5 +10,17 @@
       "memory": 256,
       "maxDuration": 10
     }
-  }
+  },
+  "redirects": [
+    { "source": "/freebie-micro-rituals", "destination": "/micro-rituals", "permanent": true },
+    { "source": "/freebie-micro-rituals.html", "destination": "/micro-rituals", "permanent": true },
+    { "source": "/freebie-product-2", "destination": "/ground-and-reset", "permanent": true },
+    { "source": "/freebie-product-2.html", "destination": "/ground-and-reset", "permanent": true },
+    { "source": "/freebie-product-3", "destination": "/living-more-intentionally", "permanent": true },
+    { "source": "/freebie-product-3.html", "destination": "/living-more-intentionally", "permanent": true },
+    { "source": "/freebie-product-4", "destination": "/working-with-the-moon", "permanent": true },
+    { "source": "/freebie-product-4.html", "destination": "/working-with-the-moon", "permanent": true },
+    { "source": "/freebie-crystal-cheat-sheet", "destination": "/crystal-cheat-sheet", "permanent": true },
+    { "source": "/freebie-crystal-cheat-sheet.html", "destination": "/crystal-cheat-sheet", "permanent": true }
+  ]
 }
