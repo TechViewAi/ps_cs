@@ -27,6 +27,9 @@
             opacity: 0.8;
             max-width: 400px;
             line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+        .thank-you-message:last-of-type {
             margin-bottom: 2rem;
         }
         .back-link {
@@ -47,6 +50,54 @@
             background: var(--charcoal);
             transform: scale(1.02);
         }
+        .thank-you-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            max-width: 160px;
+            margin: 0 auto 2rem;
+        }
+        .thank-you-divider .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--heather), transparent);
+        }
+        .thank-you-divider .diamond {
+            width: 6px;
+            height: 6px;
+            background-color: var(--mauve);
+            transform: rotate(45deg);
+        }
+        .thank-you-freebie {
+            max-width: 420px;
+            margin: 0 auto 2rem;
+        }
+        .thank-you-freebie-heading {
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+        .thank-you-freebie-text {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            opacity: 0.75;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .thank-you-secondary-link {
+            display: inline-block;
+            margin-top: 1.25rem;
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--heather);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -60,13 +111,30 @@
 
             <div class="thank-you-icon">✨</div>
 
-            <h1 class="thank-you-title">Thank You</h1>
+            <h1 class="thank-you-title">Thank You for Being Here</h1>
 
             <p class="thank-you-message">
-                You're on the list! We'll notify you as soon as we launch. Something sacred is on its way.
+                You're on the list! We'll let you know as soon as we launch.
+            </p>
+            <p class="thank-you-message">
+                Something sacred is on its way.
             </p>
 
-            <a href="index.html" class="back-link">Back to Home</a>
+            <div class="thank-you-divider">
+                <span class="line"></span>
+                <span class="diamond"></span>
+                <span class="line"></span>
+            </div>
+
+            <div class="thank-you-freebie">
+                <h2 class="thank-you-freebie-heading">Want Something for the Meantime?</h2>
+                <p class="thank-you-freebie-text">
+                    Explore our free guide, <strong>5 Micro Rituals to Come Back to Yourself</strong>, with simple practices for creating small moments of pause in your everyday life.
+                </p>
+                <a href="micro-rituals.html" class="back-link">Get the Free Guide</a>
+            </div>
+
+            <a href="index.html" class="thank-you-secondary-link">Back to Home</a>
         </main>
 
         <footer class="footer">
